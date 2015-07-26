@@ -1,0 +1,13 @@
+// plugin-golang-const v0.1.0
+
+package main
+
+const (
+	a_const = "this value"
+	aBool = true
+	aFloat = 3.14
+	an_other_const = "that value"
+	anInteger = 1227
+	foo = "bar"
+	hello = "world"
+)
