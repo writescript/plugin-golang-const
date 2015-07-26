@@ -32,10 +32,10 @@ function createConsts(d) {
 
 writeln('// plugin-golang-const v0.1.0')
 writeln()
-var packageName = data.package || data.PACKAGE || 'main';
-writeln('package '+packageName);
-writeln();
-if(data !== undefined) {
+if(data !== null) { // || Object.keys(data).length !== 0) {
+  var packageName = data.package || data.PACKAGE || 'main';
+  writeln('package '+packageName);
+  writeln();
   if(data.const !== undefined) {
     createConsts(data.const);
   } else if(data.CONST !== undefined) {
@@ -43,4 +43,6 @@ if(data !== undefined) {
   } else {
     createConsts(data);
   }
+} else {
+  writeln('// the dataset is empty!')
 }
