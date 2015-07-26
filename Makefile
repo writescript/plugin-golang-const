@@ -1,4 +1,5 @@
 .PHONY: test
 
 test:
-	bats test/test
+	@writescript --version
+	@bats test/test
