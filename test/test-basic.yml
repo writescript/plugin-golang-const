@@ -1,0 +1,7 @@
+hello: world
+foo: bar
+anInteger: 1227
+aFloat: 3.14
+aBool: true
+a-const: this value
+an-other-const: that value
