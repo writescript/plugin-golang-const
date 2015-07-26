@@ -8,5 +8,3 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq bats
   - go get github.com/writescript/writescript/cmd/writescript
-
-script: bats ./test/test
