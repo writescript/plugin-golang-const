@@ -1,0 +1,35 @@
+#!/usr/bin/env bats
+
+testData() {
+  result="$(writescript -H -p ./plugin-golang-const.js -d ./test/$1.yml)"
+  [ "$result" = "$(cat ./test/$1.src)" ]
+}
+
+# @test "Test the plugin without data" {
+#   result="$(writescript -H -p ./plugin-golang-const.js)"
+#   [ "$result" = "$(cat ./test/test-empty.src)" ]
+# }
+
+@test "Test the plugin with empty data (test-empty.yml)" {
+  testData test-empty
+}
+
+@test "Test the plugin with data (test-basic.yml)" {
+  testData test-basic
+}
+
+@test "Test the plugin with data /test-packagename-1.yml)" {
+  testData test-packagename-1
+}
+
+@test "Test the plugin with data /test-packagename-2.yml)" {
+  testData test-packagename-2
+}
+
+@test "Test the plugin with data /test-constobject-1.yml)" {
+  testData test-constobject-1
+}
+
+@test "Test the plugin with data /test-constobject-2.yml)" {
+  testData test-constobject-2
+}
